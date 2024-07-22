@@ -17,7 +17,8 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "create-bb-chrome-extension": "./src/index.ts"
+    "create-bb-chrome-extension": "./src/index.ts",
+    "create-breadboard-chrome-extension": "./src/index.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
