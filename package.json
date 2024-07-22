@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +13,16 @@
   "dependencies": {
     "colors": "^1.4.0",
     "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.14",
     "readline-sync": "^1.4.10"
   },
   "bin": {
     "create-bb-chrome-extension": "./src/index.ts"
   },
   "devDependencies": {
-    "@types/readline-sync": "^1.4.8"
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.11",
+    "@types/readline-sync": "^1.4.8",
+    "ts-node": "^10.9.2"
   }
 }

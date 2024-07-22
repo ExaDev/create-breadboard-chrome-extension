@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-import readLineSync from "readline-sync";
 import path from "path";
+import { fileURLToPath } from "url";
 import fse from "fs-extra";
+import inquirer from "inquirer";
 
-const NO_CHOICE_MADE = -1;
 const CURR_DIR = process.cwd();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const templatesDir = path.join(__dirname, "../templates");
 const templates = fse.readdirSync(templatesDir);
 
@@ -13,32 +15,43 @@ if (!templates.length) {
   process.exit(0);
 }
 
-const index = readLineSync.keyInSelect(templates);
-
-if (index === NO_CHOICE_MADE) {
-  process.exit(0);
-}
-
-const projectName = readLineSync.question(
-  "What is the name of your project? ",
+const questions = [
   {
-    limit: (input) => input.trim().length > 0,
-    limitMessage: "The project has to have a name, try again",
+    name: "project-template",
+    type: "list",
+    message: "Choose a template for your breadboard chrome extension...",
+    choices: templates,
+  },
+  {
+    name: "project-name",
+    type: "input",
+    message: "Please enter a name for your project:",
+    validate: function (input: string) {
+      if (/^([A-Za-z\-\\_])+$/.test(input)) {
+        return true;
+      } else {
+        return "Project name should only include letters, numbers, underscores and hashes.";
+      }
+    },
+  },
+  {
+    name: "confirm-create",
+    type: "confirm",
+    message: "Confirm generating new project?",
+  },
+];
+
+inquirer.prompt(questions).then((answers) => {
+  const selectedProjectTemplate = answers["project-template"];
+  const selectedProjectName = answers["project-name"];
+  const userConfirmed = answers["confirm-create"];
+  const templatePath = `${templatesDir}/${selectedProjectTemplate}`;
+
+  if (userConfirmed) {
+    const destination = `${CURR_DIR}/${selectedProjectName}`;
+    fse.copy(templatePath, destination);
+    console.log(`Successfully created ${CURR_DIR}/${selectedProjectName}`);
+  } else {
+    console.log("Aborted creating a new template");
   }
-);
-
-const confirmCreateDirectory = readLineSync.keyInYN(
-  `You entered '${projectName}', create directory with this name?`
-);
-
-if (confirmCreateDirectory) {
-  const template = templates[index];
-  const source = path.join(templatesDir, template);
-  const destination = path.join(CURR_DIR, projectName);
-  fse
-    .copy(source, destination)
-    .then(() => console.log(`Successfully created ${destination}`))
-    .catch((err) => console.error(err));
-} else {
-  console.log("Aborted creating a new template");
-}
+});
