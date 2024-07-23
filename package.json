@@ -1,15 +1,22 @@
 {
-  "name": "create-breadboard-chrome-extension",
+  "name": "create-bbcrx",
   "version": "1.0.0",
-  "description": "",
+  "description": "A package for initialising chrome extensions that use breadboard.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "breadboard",
+    "chrome extension",
+    "template"
+  ],
+  "contributors": [
+    "Alexandra Mitu",
+    "exadev"
+  ],
+  "license": "Apache-2.0",
   "dependencies": {
     "colors": "^1.4.0",
     "fs-extra": "^11.2.0",
@@ -17,8 +24,8 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "create-bb-chrome-extension": "./src/index.ts",
-    "create-breadboard-chrome-extension": "./src/index.ts"
+    "create-bb-chrome-extension": "src/index.ts",
+    "create-breadboard-chrome-extension": "src/index.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
