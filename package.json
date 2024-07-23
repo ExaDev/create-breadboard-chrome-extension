@@ -2,10 +2,11 @@
   "name": "create-bbcrx",
   "version": "1.0.0",
   "description": "A package for initialising chrome extensions that use breadboard.",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepack": "npm run build"
   },
   "keywords": [
     "breadboard",
@@ -24,13 +25,23 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "create-bb-chrome-extension": "src/index.ts",
-    "create-breadboard-chrome-extension": "src/index.ts"
+    "create-bb-chrome-extension": "dist/index.js",
+    "create-breadboard-chrome-extension": "dist/index.js",
+    "create-bbcrx": "dist/index.js"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.14.11",
     "@types/readline-sync": "^1.4.8",
     "ts-node": "^10.9.2"
-  }
+  },
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "templates/**/*.{ts,tsx}",
+    "templates/**/*.{cjs,css,html,js,json,md,png,svg,gitignore}",
+    "dist/index.js"
+  ]
 }
