@@ -1,6 +1,6 @@
 {
   "name": "create-bbcrx",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package for initialising chrome extensions that use breadboard.",
   "type": "module",
   "scripts": {
