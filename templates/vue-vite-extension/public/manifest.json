@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Breadboard Chrome Extension with Vue",
+  "description": "Starter project for initialising a chrome extension that uses Breadboard and is build with Vue + Vite",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "32": "images/icon-32.png"
+  }
+}
