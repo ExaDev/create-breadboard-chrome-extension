@@ -6,6 +6,7 @@
 
 - vanilla-ts
 - vite-react
+- vite-vue
 
 ## Using the templates
 
