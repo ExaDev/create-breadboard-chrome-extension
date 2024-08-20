@@ -4,7 +4,7 @@
 
 ## Available templates
 
-- vanilla-ts
+- webpack-ts
 - vite-react
 - vite-vue
 
