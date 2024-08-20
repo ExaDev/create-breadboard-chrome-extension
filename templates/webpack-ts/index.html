@@ -9,17 +9,17 @@
   <body>
     <div id="app">
 		<header>
-			<h4>Breadboard Summariser</h4>
+			<h4>Breadboard Runner</h4>
 		  </header>
 		  <main>
-			<form id="breadboardRunner">
-			  <label htmlFor="textInput">Please enter a message for Breadboard</label>
-			  <input
-				id="textInput"
-				type="text"
-			  ></input>
-			  <p id="textOutput"></p>
-			</form>
+			<section id="breadboardRunner">
+			  <label htmlFor="runButton">Click to run Breadboard</label>
+			  <button
+				id="runButton"
+				type="button"
+			  >Run basic board!</button>
+			  <p id="boardOutput"></p>
+			</section>
 		  </main>
     </div>
     <script type="module" src="../src/popup.ts"></script>

@@ -1,12 +1,11 @@
 import { myBoard } from "./breadboard/board";
 
-const form = document.getElementById("breadboardRunner");
-const input = document.getElementById("textInput");
-const output = document.getElementById("textOutput");
+const button = document.getElementById("runButton");
+const output = document.getElementById("boardOutput");
 
-form?.addEventListener("submit", async () => {
+button?.addEventListener("click", async () => {
   const boardResult = await myBoard({
-    message: input?.textContent!,
+    message: "Hello from Breadboard!",
   });
   output!.innerHTML = JSON.stringify(boardResult);
 });

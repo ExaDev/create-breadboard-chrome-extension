@@ -1,6 +1,6 @@
 {
-  "name": "Medium Extension",
-  "description": "This extension is made for demonstration purposes",
+  "name": "Breadboard Extension",
+  "description": "Chrome extension for running basic breadboard.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
