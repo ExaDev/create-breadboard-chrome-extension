@@ -1,6 +1,6 @@
 # create-breadboard-chrome-extension
 
-[![npm version](https://badge.fury.io/js/create-bbcrx.svg)](https://badge.fury.io/js/create-bbcrx)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/ExaDev/create-breadboard-chrome-extension) [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/create-bbcrx)
 
 ## Available templates
 
